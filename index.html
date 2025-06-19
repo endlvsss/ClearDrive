@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClearDrive | Conducción de Reemplazo Segura</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --dark:#01132B; --mid:#003366; --light:#67BACC; --bg:#f5f7fa;
+      --radius:10px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;font-family:"Nunito",sans-serif}
+    body{background:var(--bg);color:#333;line-height:1.6}
+    a{color:var(--light);text-decoration:none}
+    header{background:var(--dark);color:#fff;text-align:center;padding:4rem 1rem}
+    header h1{font-size:2.8rem;margin-bottom:.5rem}
+    header p{font-weight:300;font-size:1.2rem}
+    .cta-btn{display:inline-block;margin-top:1rem;padding:1rem 2rem;background:#25d366;color:#fff;border-radius:var(--radius);font-weight:700}
+    nav{background:#fff;position:sticky;top:0;box-shadow:0 2px 4px rgba(0,0,0,.08);z-index:10}
+    nav ul{display:flex;flex-wrap:wrap;justify-content:center;padding:.5rem 0;gap:1rem;list-style:none}
+    nav a{font-weight:600;color:var(--mid)}
+    main{max-width:1000px;margin:auto;padding:2rem 1rem}
+    section{background:#fff;border-radius:var(--radius);padding:2rem;margin-top:2rem}
+    h2{color:var(--mid);margin-bottom:1rem;text-align:center}
+    .steps{display:flex;flex-wrap:wrap;gap:1rem;text-align:center}
+    .step{flex:1 1 200px;padding:1rem}
+    .step span{display:block;font-size:2.2rem;color:var(--light);margin-bottom:.5rem}
+    .cards{display:flex;flex-wrap:wrap;gap:1rem}
+    .card{flex:1 1 250px;background:var(--light);color:#fff;border-radius:var(--radius);padding:1.5rem}
+    .card h3{margin-bottom:.5rem}
+    .card a{display:inline-block;margin-top:.8rem;padding:.6rem 1.2rem;background:#fff;color:var(--mid);border-radius:var(--radius);font-weight:700}
+    .counters{display:flex;flex-wrap:wrap;gap:1rem;text-align:center}
+    .counter{flex:1 1 200px}
+    .counter span{display:block;font-size:2rem;color:var(--light);font-weight:700}
+    details{margin-bottom:1rem;border:1px solid #ddd;border-radius:var(--radius);padding:1rem;background:#fafafa}
+    summary{cursor:pointer;font-weight:600;color:var(--mid)}
+    .btn{display:inline-block;margin-top:.8rem;padding:.75rem 1.5rem;border-radius:var(--radius);font-weight:700;color:#fff}
+    .btn-wsp{background:#25d366}
+    .btn-secondary{background:var(--mid)}
+    iframe{width:100%;height:70vh;border:1px solid #ccc;border-radius:var(--radius)}
+    @media(max-width:640px){
+      header h1{font-size:2.2rem}
+      nav ul{gap:.5rem}
+      .cards,.steps,.counters{flex-direction:column}
+      iframe{height:60vh}
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <ul>
+    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#funciona">Cómo Funciona</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+    <li><a href="#terminos">T&C</a></li>
+  </ul>
+</nav>
+
+<header id="inicio">
+  <h1>Regresa a Casa Seguro</h1>
+  <p>Con ClearDrive disfruta tu evento y deja la conducción en nuestras manos.</p>
+  <a class="cta-btn" href="https://wa.me/message/XJ3YP4DDOHB6A1" target="_blank">💬 Solicitar Cotización</a>
+</header>
+
+<main>
+  <section id="funciona">
+    <h2>¿Cómo funciona?</h2>
+    <div class="steps">
+      <div class="step"><span>1</span>Agenda tu viaje por WhatsApp o Formulario.</div>
+      <div class="step"><span>2</span>Recibe la cotización y confirma el servicio.</div>
+      <div class="step"><span>3</span>Nuestro conductor te lleva en tu propio vehículo a destino.</div>
+    </div>
+  </section>
+
+  <section id="servicios">
+    <h2>Servicios</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Post-Evento</h3>
+        <p>Conducción de reemplazo desde matrimonios y celebraciones nocturnas.</p>
+        <a href="https://wa.me/message/XJ3YP4DDOHB6A1" target="_blank">Agendar</a>
+      </div>
+      <div class="card">
+        <h3>Traslado Aeropuerto</h3>
+        <p>Viaje puerta a puerta al AMB sin estrés ni estacionamientos caros.</p>
+        <a href="https://wa.me/message/XJ3YP4DDOHB6A1" target="_blank">Cotizar</a>
+      </div>
+      <div class="card">
+        <h3>Revisión Técnica</h3>
+        <p>Nos encargamos de la inspección y trámites; tú solo retiras tu auto al día.</p>
+        <a href="https://wa.me/message/XJ3YP4DDOHB6A1" target="_blank">Próximamente</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Nuestras cifras</h2>
+    <div class="counters">
+      <div class="counter"><span>+150</span>Viajes completados</div>
+      <div class="counter"><span>+20</span>Revisiones técnicas</div>
+      <div class="counter"><span>+120</span>Clientes satisfechos</div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <h2>Preguntas frecuentes</h2>
+    <details><summary>¿En qué comunas operan?</summary><p>Santiago Centro, Vitacura, Las Condes, Lo Barnechea, Providencia, Huechuraba y Chicureo.</p></details>
+    <details><summary>¿Con cuánta anticipación reservo?</summary><p>Idealmente 48 h. Aun así, contáctanos y veremos disponibilidad.</p></details>
+    <details><summary>¿Puedo cancelar sin costo?</summary><p>Hasta 24 h antes es gratuito. Después se cobra un 50 % del servicio.</p></details>
+    <details><summary>¿Cómo calculan el precio?</summary><p>Distancia, horario y tipo de servicio (básico o premium).</p></details>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p><strong>Email:</strong> <a href="mailto:cleardrivead@gmail.com">cleardrivead@gmail.com</a><br>
+       <strong>Instagram:</strong> <a href="https://www.instagram.com/cleardrivecl/" target="_blank">@cleardrivecl</a><br>
+       <strong>WhatsApp:</strong> <a href="https://wa.me/message/XJ3YP4DDOHB6A1" target="_blank">+56 9 2002 6402</a></p>
+    <a class="btn btn-wsp" href="https://wa.me/message/XJ3YP4DDOHB6A1" target="_blank">💬 Escríbenos por WhatsApp</a>
+  </section>
+
+  <section id="terminos">
+    <h2>Términos y Condiciones</h2>
+    <iframe src="https://classic-bestseller-b3c.notion.site/T-rminos-y-Condiciones-ClearDrive-10d8cea76caa8015838fca5d9c2a32a4?embed=true" loading="lazy"></iframe>
+    <p style="margin-top:1rem"><a class="btn btn-secondary" href="https://classic-bestseller-b3c.notion.site/T-rminos-y-Condiciones-ClearDrive-10d8cea76caa8015838fca5d9c2a32a4" target="_blank">Abrir versión completa</a></p>
+  </section>
+</main>
+
+<footer>
+  © 2025 ClearDrive – Todos los derechos reservados
+</footer>
+
+</body>
+</html>
