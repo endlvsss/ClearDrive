@@ -23,7 +23,7 @@
     body{background:var(--bg);color:#333;line-height:1.6;}
     a{color:var(--accent);text-decoration:none;}
 
-    /* Botón flotante WhatsApp */
+    /* WhatsApp flotante */
     .wsp-float{position:fixed;right:18px;bottom:18px;width:56px;height:56px;border-radius:50%;
       background:var(--cta);color:#fff;font-size:28px;display:flex;align-items:center;justify-content:center;
       box-shadow:0 4px 10px rgba(0,0,0,.25);z-index:160;}
@@ -36,29 +36,32 @@
     nav a{color:var(--dark);font-weight:600;padding:.25rem .55rem;border-radius:6px;}
     nav a:hover{background:var(--accent);color:#fff;}
 
-    /* HERO (solo imagen) */
-    header{
-      background:
-        linear-gradient(rgba(1,19,43,.7),rgba(1,19,43,.45)),
-        url('https://res.cloudinary.com/dm24jrq8d/image/upload/v1750084801/6_jxcgwr.png') center/cover no-repeat;
-      color:#fff;text-align:center;padding:8rem 1rem 7rem;position:relative;
+    /* ---- HERO LIMPIO ---- */
+    .hero-clean{
+      position:relative;height:580px;display:flex;align-items:center;justify-content:center;
+      text-align:center;color:#fff;
+      background:linear-gradient(180deg,rgba(1,19,43,.88),rgba(1,19,43,.55)),
+        url('https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&w=1600&q=60') center/cover no-repeat;
     }
-    header::after{
-      content:"";position:absolute;bottom:-1px;left:0;width:100%;height:80px;background:var(--bg);
-      mask-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="white" d="M0,224L80,213.3C160,203,320,181,480,160C640,139,800,117,960,128C1120,139,1280,181,1360,202.7L1440,224L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>');
-      mask-size:cover;mask-repeat:no-repeat;transform:scaleX(-1);}
-    header img.logo{width:150px;margin-bottom:1.2rem;filter:drop-shadow(0 0 4px rgba(0,0,0,.4));}
-    header h1{font-size:2.8rem;margin-bottom:.7rem;}
-    header p{font-weight:300;font-size:1.2rem;max-width:650px;margin:auto;}
-    .cta-btn{display:inline-block;margin-top:2rem;padding:1rem 2.4rem;background:var(--cta);
-      color:#fff;border-radius:var(--radius);font-weight:700;transition:opacity .2s;}
-    .cta-btn:hover{opacity:.9;}
+    .hero-inner{padding:0 1.5rem;max-width:800px}
+    .hero-logo{width:96px;margin:0 auto 1.2rem;}
+    .hero-clean h1{font-size:2.8rem;line-height:1.2;margin-bottom:1rem;font-weight:700;}
+    .hero-clean p{font-size:1.15rem;font-weight:300;margin-bottom:2rem;}
 
-    /* Contenedor global */
+    @media(max-width:640px){
+      .hero-clean{height:auto;padding:6.5rem 0 5rem;}
+      .hero-clean h1{font-size:2.1rem;}
+    }
+
+    /* (Opcional) métricas */
+    .hero-stats{margin-top:2.5rem;display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;}
+    .hero-stats .stat{font-size:1rem;color:#fff;}
+    .hero-stats span{display:block;font-size:2rem;font-weight:700;color:var(--accent);margin-bottom:.2rem;}
+    .hero-stats small{font-size:.9rem;}
+
+    /* Secciones generales */
     .container{max-width:1100px;margin:auto;padding:2rem 1rem;}
-
     section{background:#fff;border-radius:var(--radius);padding:2.8rem 1.7rem;margin-top:3rem;}
-
     h2{text-align:center;color:var(--mid);margin-bottom:2rem;font-size:1.9rem;}
 
     /* Cómo funciona */
@@ -116,7 +119,6 @@
     footer{background:var(--dark);color:#fff;text-align:center;padding:3rem 1rem;font-size:.9rem;margin-top:5rem;}
 
     @media(max-width:640px){
-      header h1{font-size:2.25rem;}
       .sticky-bar{flex-direction:column;gap:.6rem;}
     }
   </style>
@@ -137,11 +139,28 @@
   </ul>
 </nav>
 
-<header id="inicio">
-  <img class="logo" src="https://res.cloudinary.com/dm24jrq8d/image/upload/v1750084801/6_jxcgwr.png" alt="Logo ClearDrive">
-  <h1>Estás a un driver de volver a casa seguro</h1>
-  <p>Disfruta tu evento. Nosotros manejamos tu vehículo hasta tu hogar de forma segura y responsable.</p>
-  <a class="cta-btn" href="https://wa.me/message/XJ3YP4DDOHB6A1" target="_blank">Solicitar Cotización</a>
+<!-- HERO LIMPIO -->
+<header class="hero-clean" id="inicio">
+  <div class="hero-inner">
+    <img class="hero-logo" src="https://res.cloudinary.com/dm24jrq8d/image/upload/v1750084801/6_jxcgwr.png" alt="Logo ClearDrive">
+
+    <h1>
+      Estás a un driver<br>
+      de volver a casa seguro
+    </h1>
+
+    <p>Disfruta tu evento. Nosotros manejamos tu vehículo hasta tu hogar de forma segura y responsable.</p>
+
+    <a class="cta-btn" href="https://wa.me/message/XJ3YP4DDOHB6A1" target="_blank">Solicitar Cotización</a>
+
+    <!-- Métricas (descomentar si deseas)
+    <div class="hero-stats">
+      <div class="stat"><span>+750</span><small>rutas completadas</small></div>
+      <div class="stat"><span>+50</span><small>centros de eventos</small></div>
+      <div class="stat"><span>+740</span><small>clientes felices</small></div>
+    </div>
+    -->
+  </div>
 </header>
 
 <main class="container">
@@ -150,18 +169,9 @@
   <section id="funciona" class="how">
     <h2>¿Cómo funciona?</h2>
     <div class="how-grid">
-      <div class="how-card">
-        <span class="how-icon">1</span>
-        <p>Agenda tu viaje<br>por WhatsApp o formulario.</p>
-      </div>
-      <div class="how-card">
-        <span class="how-icon">2</span>
-        <p>Recibe la cotización<br>y confirma el servicio.</p>
-      </div>
-      <div class="how-card">
-        <span class="how-icon">3</span>
-        <p>Nuestro conductor te lleva<br>en tu propio vehículo hasta tu destino.</p>
-      </div>
+      <div class="how-card"><span class="how-icon">1</span><p>Agenda tu viaje<br>por WhatsApp o formulario.</p></div>
+      <div class="how-card"><span class="how-icon">2</span><p>Recibe la cotización<br>y confirma el servicio.</p></div>
+      <div class="how-card"><span class="how-icon">3</span><p>Nuestro conductor te lleva<br>en tu propio vehículo hasta tu destino.</p></div>
     </div>
   </section>
 
@@ -169,21 +179,9 @@
   <section id="servicios">
     <h2>Servicios</h2>
     <div class="cards">
-      <div class="card">
-        <h3>Post-Evento</h3>
-        <p>Conducción de reemplazo desde matrimonios y celebraciones nocturnas.</p>
-        <a class="card-btn" href="https://wa.me/message/XJ3YP4DDOHB6A1" target="_blank">Agendar</a>
-      </div>
-      <div class="card">
-        <h3>Traslado Aeropuerto</h3>
-        <p>Viaje puerta a puerta al AMB sin estrés ni estacionamientos caros.</p>
-        <a class="card-btn" href="https://wa.me/message/XJ3YP4DDOHB6A1" target="_blank">Cotizar</a>
-      </div>
-      <div class="card">
-        <h3>Revisión Técnica</h3>
-        <p>Nos encargamos de la inspección y trámites; tú solo retiras tu auto al día.</p>
-        <a class="card-btn" href="#" target="_blank">Próximamente</a>
-      </div>
+      <div class="card"><h3>Post-Evento</h3><p>Conducción de reemplazo desde matrimonios y celebraciones nocturnas.</p><a class="card-btn" href="https://wa.me/message/XJ3YP4DDOHB6A1" target="_blank">Agendar</a></div>
+      <div class="card"><h3>Traslado Aeropuerto</h3><p>Viaje puerta a puerta al AMB sin estrés ni estacionamientos caros.</p><a class="card-btn" href="https://wa.me/message/XJ3YP4DDOHB6A1" target="_blank">Cotizar</a></div>
+      <div class="card"><h3>Revisión Técnica</h3><p>Nos encargamos de la inspección y trámites; tú solo retiras tu auto al día.</p><a class="card-btn" href="#" target="_blank">Próximamente</a></div>
     </div>
   </section>
 
