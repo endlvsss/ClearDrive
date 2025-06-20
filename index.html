@@ -4,20 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ClearDrive | Conductor de reemplazo | Angelitos – Disfruta tu evento seguro</title>
-
   <!-- Favicon -->
   <link rel="icon" href="https://res.cloudinary.com/dm24jrq8d/image/upload/v1750084801/6_jxcgwr.png?v=2" type="image/png">
-
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
 
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="¿Necesitas un conductor de reemplazo o servicio de angelitos en Santiago? ClearDrive te lleva seguro a casa después de fiestas, matrimonios o eventos. Puntualidad, confianza y comodidad en cada trayecto. Reserva tu conductor con nosotros.">
+  <!-- SEO -->
+  <meta name="description" content="¿Necesitas un conductor de reemplazo o angelitos en Santiago? ClearDrive te lleva seguro a casa después de fiestas, matrimonios o eventos. Puntualidad, confianza y comodidad en cada trayecto. Reserva tu conductor con nosotros.">
   <meta name="keywords" content="conductor de reemplazo, angelitos, chofer de reemplazo, vuelta segura, Santiago, chofer profesional, transporte seguro, eventos, matrimonios, fiestas, ClearDrive">
   <link rel="canonical" href="https://cleardrive.cl/" />
   <meta name="robots" content="index, follow">
 
+  <!-- ============== ESTILOS GENERALES (puedes llevar a tu CSS global si quieres) ============== -->
   <style>
     :root{
       --dark:#01132B;
@@ -34,12 +33,12 @@
     img{display:block;max-width:100%;height:auto;}
     main{min-height:60vh;}
 
-    /* Botón flotante WhatsApp */
+    /* WhatsApp flotante */
     .wsp-float{position:fixed;right:18px;bottom:18px;width:56px;height:56px;border-radius:50%;
       background:var(--cta);color:#fff;font-size:28px;display:flex;align-items:center;justify-content:center;
       box-shadow:0 4px 12px rgba(0,0,0,.25);z-index:160;}
 
-    /* NAV Superior */
+    /* NAV */
     nav{position:fixed;top:0;width:100%;background:rgba(255,255,255,.93);
       backdrop-filter:blur(8px);z-index:120;box-shadow:0 2px 8px rgba(0,0,0,.07);}
     .nav-wrapper{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:.6rem 1rem;}
@@ -68,7 +67,7 @@
       #nav-menu.active{display:flex;}
     }
 
-    /* HERO sección principal */
+    /* ---- HERO LIMPIO ---- */
     .hero-clean{
       position:relative;min-height:520px;display:flex;align-items:center;justify-content:center;
       text-align:center;color:#fff;padding-top:86px;
@@ -103,7 +102,7 @@
       box-shadow: 0 10px 36px rgba(37,211,102,.25);
     }
 
-    /* Métricas animadas HERO */
+    /* --- MÉTRICAS ANIMADAS HERO (mejorado, SIN cuadro blanco) --- */
     .hero-stats {
       margin-top: 2.2rem;
       margin-bottom: 2.7rem;
@@ -160,7 +159,7 @@
       }
     }
 
-    /* Secciones generales (cómo funciona, servicios, cifras, etc) */
+    /* Secciones generales */
     .container{max-width:1100px;margin:auto;padding:2rem 1rem;}
     section{background:#fff;border-radius:var(--radius);padding:2.8rem 1.7rem;margin-top:3rem;box-shadow:0 4px 16px rgba(0,0,0,.04);}
     h2{text-align:center;color:var(--mid);margin-bottom:2rem;font-size:2rem;letter-spacing:-.5px;}
@@ -169,7 +168,7 @@
       .container{padding:1.3rem .5rem;}
     }
 
-    /* "¿Cómo funciona?" cards */
+    /* Cómo funciona */
     .how {
       background: linear-gradient(125deg, #e7f3fc 0%, #f8fbff 100%);
       box-shadow: 0 6px 32px rgba(1,19,43,0.05);
@@ -237,7 +236,7 @@
       }
     }
 
-    /* Servicios cards */
+    /* Servicios */
     .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.4rem;}
     .card{background:#fff;border:1px solid #e5e7eb;border-radius:var(--radius);padding:2rem 1.4rem 1.3rem;
       box-shadow:0 3px 12px rgba(0,0,0,.07);display:flex;flex-direction:column;align-items:center;
@@ -255,6 +254,97 @@
     .stats{display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;}
     .stat{flex:1 1 260px;text-align:center;}
     .stat span{display:block;font-size:2.1rem;font-weight:700;color:var(--accent);margin-bottom:.3rem;}
+
+    /* ======================= GALERÍA - CARRUSEL ======================= */
+    .gallery{box-shadow:0 4px 16px rgba(0,0,0,.04);}
+    .carousel-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.7rem;
+      margin-top: 1.5rem;
+    }
+    .carousel-viewport {
+      width: 900px; /* 3 x 290px de imagen + margen */
+      max-width: 98vw;
+      overflow: hidden;
+      border-radius: 24px;
+      background: #fff;
+      box-shadow: 0 3px 16px rgba(0,0,0,0.08);
+    }
+    .carousel-track {
+      display: flex;
+      transition: transform 0.7s cubic-bezier(.6,-0.17,.28,1.11);
+      will-change: transform;
+    }
+    .carousel-track img {
+      width: 290px;
+      height: 330px;
+      object-fit: cover;
+      border-radius: 20px;
+      margin: 0 10px;
+      background: #eee;
+      box-shadow: 0 4px 18px rgba(1,19,43,0.11);
+      transition: box-shadow .22s, transform .32s;
+    }
+    .carousel-track img:hover {
+      box-shadow: 0 8px 32px rgba(34,87,122,0.16);
+      transform: scale(1.03);
+    }
+    .carousel-arrow {
+      border: none;
+      background: #19365c;
+      color: #fff;
+      font-size: 2.8rem;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      box-shadow: 0 4px 16px rgba(1,19,43,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.14s, box-shadow 0.17s;
+      z-index: 2;
+      opacity: 0.98;
+    }
+    .carousel-arrow:hover:not(:disabled) {
+      background: #67BACC;
+      color: #fff;
+      opacity: 1;
+    }
+    .carousel-arrow:disabled {
+      opacity: 0.48;
+      cursor: default;
+    }
+    .carousel-pagination {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 1.3rem;
+    }
+    .carousel-pagination .dot {
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: #abc8de;
+      opacity: 0.5;
+      cursor: pointer;
+      transition: opacity .2s, background .22s;
+      border: none;
+    }
+    .carousel-pagination .dot.active {
+      background: #19365c;
+      opacity: 1;
+    }
+    @media (max-width: 1000px) {
+      .carousel-viewport { width: 95vw; }
+      .carousel-track img { width: 29vw; min-width: 110px; height: 170px; }
+    }
+    @media (max-width: 600px) {
+      .carousel-viewport { width: 98vw; }
+      .carousel-track img { width: 93vw; min-width: 120px; height: 150px; margin: 0 4px; }
+    }
 
     /* FAQ */
     details{border:1px solid #e2e2e2;background:#fcfcfc;padding:1.18rem;border-radius:var(--radius);
@@ -291,100 +381,14 @@
     .footer-links{margin-bottom:.6rem;}
     .footer-links a{color:var(--accent);margin:0 .55rem;font-size:1.13rem;}
     .footer-links a:hover{color:var(--cta);}
-
-    /* ========== GALERÍA CARRUSEL CUSTOM ========== */
-    .carousel-gallery {
-      position: relative;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 2.4rem 0 0.4rem 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-    .carousel-track {
-      display: flex;
-      gap: 2.2rem;
-      transition: transform 0.7s cubic-bezier(.61,-0.04,.19,1.04);
-      will-change: transform;
-    }
-    .carousel-img {
-      width: 260px;
-      height: 260px;
-      object-fit: cover;
-      border-radius: 24px;
-      box-shadow: 0 4px 18px rgba(10,40,80,0.12);
-      background: #eaf0f6;
-      user-select: none;
-      pointer-events: none;
-      transition: transform .3s, box-shadow .3s;
-    }
-    .carousel-img:hover {
-      transform: scale(1.045) rotate(-1.4deg);
-      box-shadow: 0 8px 32px rgba(60,120,200,0.20);
-    }
-    .carousel-arrow {
-      position: absolute;
-      top: 50%;
-      z-index: 10;
-      transform: translateY(-50%);
-      background: rgba(1,19,43,0.90);
-      color: #fff;
-      border: none;
-      border-radius: 50%;
-      width: 52px;
-      height: 52px;
-      font-size: 2.5rem;
-      cursor: pointer;
-      box-shadow: 0 2px 16px rgba(30,60,120,0.10);
-      transition: background .2s, transform .18s;
-      display: flex; align-items: center; justify-content: center;
-      opacity: 0.97;
-    }
-    .carousel-arrow.left { left: -36px; }
-    .carousel-arrow.right { right: -36px; }
-    .carousel-arrow:active, .carousel-arrow:focus { background: #003366; transform: scale(1.08); }
-    .carousel-dots {
-      display: flex;
-      justify-content: center;
-      margin-top: 1.2rem;
-      gap: 0.55rem;
-    }
-    .carousel-dots button {
-      width: 13px; height: 13px;
-      border-radius: 50%;
-      background: #d1e0ea;
-      border: none;
-      margin: 0 2px;
-      cursor: pointer;
-      transition: background .17s, transform .15s;
-      box-shadow: 0 1px 6px rgba(1,19,43,.08);
-    }
-    .carousel-dots button.active {
-      background: #003366;
-      transform: scale(1.23);
-    }
-    @media (max-width: 950px) {
-      .carousel-img { width: 31vw; max-width: 190px; height: 31vw; min-width: 125px;}
-      .carousel-arrow.left { left: -9px;}
-      .carousel-arrow.right { right: -9px;}
-    }
-    @media (max-width: 640px) {
-      .carousel-gallery { max-width: 99vw;}
-      .carousel-img { width: 87vw; max-width: 99vw; height: 47vw; min-width: 90px;}
-      .carousel-track { gap: 1.2rem; }
-      .carousel-arrow { width: 36px; height: 36px; font-size: 1.6rem;}
-      .carousel-arrow.left { left: 2px;}
-      .carousel-arrow.right { right: 2px;}
-    }
   </style>
 </head>
 <body>
-<!-- Botón flotante de WhatsApp -->
+
+<!-- WhatsApp botón flotante -->
 <a class="wsp-float" href="https://wa.me/message/XJ3YP4DDOHB6A1" target="_blank" aria-label="WhatsApp de ClearDrive">💬</a>
 
-<!-- Menú navegación principal -->
+<!-- ============== NAVBAR ============== -->
 <nav>
   <div class="nav-wrapper">
     <div class="nav-logo">
@@ -418,7 +422,7 @@
   });
 </script>
 
-<!-- ================= HERO PRINCIPAL ================= -->
+<!-- ===================== HERO PRINCIPAL ===================== -->
 <header class="hero-clean" id="inicio" role="banner">
   <div class="hero-inner">
     <img class="hero-logo" src="https://res.cloudinary.com/dm24jrq8d/image/upload/v1750084801/6_jxcgwr.png?v=2" alt="Logo ClearDrive">
@@ -428,7 +432,7 @@
     </h1>
     <p>Disfruta tu evento. Nosotros manejamos tu vehículo hasta tu hogar de forma segura y responsable.</p>
     <a class="cta-btn" href="https://wa.me/message/XJ3YP4DDOHB6A1" target="_blank">Solicitar Cotización</a>
-    <!-- Métricas animadas -->
+    <!-- MÉTRICAS ANIMADAS -->
     <div class="hero-stats">
       <div class="stat"><span data-target="560">0</span><small>Clientes</small></div>
       <div class="stat"><span data-target="50">0</span><small>Centros de eventos</small></div>
@@ -439,7 +443,7 @@
 
 <main class="container">
 
-  <!-- ================= Cómo funciona ================= -->
+  <!-- ===================== CÓMO FUNCIONA ===================== -->
   <section id="funciona" class="how">
     <h2>¿Cómo funciona?</h2>
     <div class="how-grid">
@@ -458,7 +462,7 @@
     </div>
   </section>
 
-  <!-- ================= Servicios ================= -->
+  <!-- ===================== SERVICIOS ===================== -->
   <section id="servicios">
     <h2>Servicios</h2>
     <div class="cards">
@@ -480,7 +484,7 @@
     </div>
   </section>
 
-  <!-- ================= Cifras ================= -->
+  <!-- ===================== CIFRAS ===================== -->
   <section>
     <h2>Nuestras cifras</h2>
     <div class="stats">
@@ -490,31 +494,34 @@
     </div>
   </section>
 
-  <!-- ================= GALERÍA - MOMENTOS CLEARDIRVE ================= -->
+  <!-- ===================== GALERÍA: MOMENTOS CLEARDIVE (CARRUSEL) ===================== -->
   <section id="galeria" class="gallery">
     <h2>Momentos ClearDrive</h2>
-    <!-- Carrusel de Galería, 3 fotos visibles, responsive, flechas modernas -->
-    <div class="carousel-gallery">
-      <!-- Flecha Izquierda -->
-      <button class="carousel-arrow left" aria-label="Foto anterior">&#10094;</button>
-      
-      <!-- Imágenes carrusel (puedes agregar más abajo) -->
-      <div class="carousel-track">
-        <img src="https://res.cloudinary.com/dm24jrq8d/image/upload/v1750446198/IMG_5403_xuwwhn.jpg" alt="Momento 1" class="carousel-img" draggable="false">
-        <img src="https://res.cloudinary.com/dm24jrq8d/image/upload/v1750446198/IMG_3372_idadil.jpg" alt="Momento 2" class="carousel-img" draggable="false">
-        <img src="https://res.cloudinary.com/dm24jrq8d/image/upload/v1750446217/7797480B-F517-42D4-AF5A-877B031D6E5D_fa6zkg.jpg" alt="Momento 3" class="carousel-img" draggable="false">
-        <img src="https://res.cloudinary.com/dm24jrq8d/image/upload/v1750446253/IMG_4565_qf56vh.jpg" alt="Momento 4" class="carousel-img" draggable="false">
-        <img src="https://res.cloudinary.com/dm24jrq8d/image/upload/v1750383936/assets_cliente-3_i2kqcc.jpg?v=2" alt="Momento 5" class="carousel-img" draggable="false">
-        <img src="https://res.cloudinary.com/dm24jrq8d/image/upload/v1750384047/assets_cliente-2_f1w5wp.jpg?v=2" alt="Momento 6" class="carousel-img" draggable="false">
+    <div class="carousel-container">
+      <!-- Flecha izquierda -->
+      <button class="carousel-arrow left" aria-label="Anterior">&#10094;</button>
+      <!-- Carrusel: exactamente 3 imágenes a la vez -->
+      <div class="carousel-viewport">
+        <div class="carousel-track">
+          <!-- Aquí agregas/elimina imágenes -->
+          <img src="https://res.cloudinary.com/dm24jrq8d/image/upload/v1750383936/assets_cliente-3_i2kqcc.jpg?v=2" alt="Cliente satisfecho 1">
+          <img src="https://res.cloudinary.com/dm24jrq8d/image/upload/v1750384047/assets_cliente-2_f1w5wp.jpg?v=2" alt="Cliente satisfecho 2">
+          <img src="https://res.cloudinary.com/dm24jrq8d/image/upload/v1750384083/assets_cliente-1_jkx4qv.jpg?v=2" alt="Cliente satisfecho 3">
+          <img src="https://res.cloudinary.com/dm24jrq8d/image/upload/v1750446198/IMG_5403_xuwwhn.jpg" alt="Cliente 4">
+          <img src="https://res.cloudinary.com/dm24jrq8d/image/upload/v1750446198/IMG_3372_idadil.jpg" alt="Cliente 5">
+          <img src="https://res.cloudinary.com/dm24jrq8d/image/upload/v1750446217/7797480B-F517-42D4-AF5A-877B031D6E5D_fa6zkg.jpg" alt="Cliente 6">
+          <img src="https://res.cloudinary.com/dm24jrq8d/image/upload/v1750446253/IMG_4565_qf56vh.jpg" alt="Cliente 7">
+          <img src="https://res.cloudinary.com/dm24jrq8d/image/upload/v1750449826/1ae3e410-7632-472d-8990-67deaeb57116_xdng0s.jpg" alt="Cliente 8">
+          <img src="https://res.cloudinary.com/dm24jrq8d/image/upload/v1750449826/489c268f-fd32-41f2-b68e-85499e8c8b22_end3ry.jpg" alt="Cliente 9">
+        </div>
       </div>
-      <!-- Flecha Derecha -->
-      <button class="carousel-arrow right" aria-label="Foto siguiente">&#10095;</button>
+      <!-- Flecha derecha -->
+      <button class="carousel-arrow right" aria-label="Siguiente">&#10095;</button>
     </div>
-    <!-- Indicadores/Paginación -->
-    <div class="carousel-dots"></div>
+    <div class="carousel-pagination"></div>
   </section>
 
-  <!-- ================= FAQ ================= -->
+  <!-- ===================== FAQ ===================== -->
   <section id="faq">
     <h2>Preguntas frecuentes</h2>
     <details open>
@@ -529,7 +536,7 @@
     <details><summary>¿Cómo calculan el precio?</summary><p>Según distancia, horario y tipo de servicio.</p></details>
   </section>
 
-  <!-- ================= Contacto ================= -->
+  <!-- ===================== CONTACTO ===================== -->
   <section id="contacto">
     <h2>Contacto</h2>
     <div class="contact-links">
@@ -539,7 +546,7 @@
     </div>
   </section>
 
-  <!-- ================= Términos y condiciones ================= -->
+  <!-- ===================== TÉRMINOS ===================== -->
   <section id="terminos">
     <h2>Términos y Condiciones</h2>
     <div class="terms-box">
@@ -554,13 +561,13 @@
   </section>
 </main>
 
-<!-- Barra CTA, solo visible en mobile -->
+<!-- ===================== BARRA CTA MOBILE ===================== -->
 <div class="sticky-bar">
   <span>¿Listo para reservar tu conductor?</span>
   <a href="https://wa.me/message/XJ3YP4DDOHB6A1" target="_blank">Agendar por WhatsApp</a>
 </div>
 
-<!-- ================= FOOTER ================= -->
+<!-- ===================== FOOTER ===================== -->
 <footer>
   <div class="footer-links">
     <a href="mailto:cleardrivead@gmail.com" aria-label="Correo ClearDrive">Email</a>
@@ -572,11 +579,8 @@
   </div>
 </footer>
 
-<!-- ================= SCRIPTS ================= -->
-
-<!-- Métricas animadas del HERO -->
+<!-- ===================== MÉTRICAS ANIMADAS HERO ===================== -->
 <script>
-  // Conteo animado para métricas
   document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.hero-stats .stat span[data-target]').forEach(span => {
       const target = +span.getAttribute('data-target');
@@ -600,110 +604,79 @@
   });
 </script>
 
-<!-- Carrusel de galería - 3 fotos visibles, swipe, flechas, dots, autoplay suave -->
+<!-- ===================== JS CARRUSEL (Galería) ===================== -->
 <script>
 /*
-  CARRUSEL GALERÍA
-  - 3 fotos visibles
-  - animación suave
-  - responsive
-  - flechas modernas
-  - dots/indicadores
-  - swipe/drag touch
-  - fácil agregar más fotos/modificar
-  - autoplay lento y pausa al tocar
+Carrusel JS | Muestra exactamente 3 imágenes íntegras visibles (o 2/1 según tamaño de pantalla).
+Flechas, dots, swipe habilitado.
 */
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
   const track = document.querySelector('.carousel-track');
-  const imgs = document.querySelectorAll('.carousel-img');
-  const prevBtn = document.querySelector('.carousel-arrow.left');
-  const nextBtn = document.querySelector('.carousel-arrow.right');
-  const dots = document.querySelector('.carousel-dots');
-  const VISIBLE = 3; // Cambia a 2 o 1 para otros formatos
+  const images = Array.from(track.children);
+  const leftBtn = document.querySelector('.carousel-arrow.left');
+  const rightBtn = document.querySelector('.carousel-arrow.right');
+  const pagination = document.querySelector('.carousel-pagination');
 
-  let idx = 0;
-  let autoPlay;
-  const imgCount = imgs.length;
+  function getVisibleSlides() {
+    if(window.innerWidth < 700) return 1;
+    if(window.innerWidth < 1000) return 2;
+    return 3;
+  }
 
-  // Dots
-  function updateDots() {
-    dots.innerHTML = '';
-    let pages = Math.ceil(imgCount / VISIBLE);
-    for (let i = 0; i < pages; i++) {
-      let b = document.createElement('button');
-      if (i === Math.floor(idx / VISIBLE)) b.classList.add('active');
-      b.onclick = () => goTo(i * VISIBLE);
-      dots.appendChild(b);
+  let visibleSlides = getVisibleSlides();
+  let index = 0;
+  const total = images.length;
+  let maxIndex = Math.max(0, total - visibleSlides);
+
+  // Crea dots de paginación
+  function renderDots() {
+    pagination.innerHTML = "";
+    maxIndex = Math.max(0, images.length - visibleSlides);
+    for(let i=0; i<=maxIndex; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'dot' + (i===index?' active':'');
+      dot.onclick = () => { index = i; update(); };
+      pagination.appendChild(dot);
     }
   }
 
-  // Mueve el carrusel
-  function goTo(i, animate = true) {
-    idx = i;
-    if (idx < 0) idx = 0;
-    if (idx > imgCount - VISIBLE) idx = imgCount - VISIBLE;
-    track.style.transition = animate ? "transform 0.7s cubic-bezier(.61,-0.04,.19,1.04)" : "none";
-    track.style.transform = `translateX(-${idx * (imgs[0].offsetWidth + parseInt(getComputedStyle(track).gap)||0)}px)`;
-    updateDots();
+  // Actualiza el slide visible
+  function update() {
+    if(index < 0) index = 0;
+    if(index > maxIndex) index = maxIndex;
+    const slideWidth = images[0].offsetWidth + 20;
+    track.style.transform = `translateX(-${index * slideWidth}px)`;
+    document.querySelectorAll('.carousel-pagination .dot').forEach((d,i) => d.classList.toggle('active', i===index));
+    leftBtn.disabled = index === 0;
+    rightBtn.disabled = index === maxIndex;
   }
-  function next() { goTo(idx + 1); }
-  function prev() { goTo(idx - 1); }
 
-  // Autoplay lento
-  function startAuto() {
-    stopAuto();
-    autoPlay = setInterval(() => {
-      if(idx < imgCount - VISIBLE) next();
-      else goTo(0);
-    }, 4500);
+  leftBtn.onclick = () => { if(index>0){index--; update();} };
+  rightBtn.onclick = () => { if(index<maxIndex){index++; update();} };
+
+  // Swipe touch para mobile
+  let startX = 0;
+  track.addEventListener('touchstart', e => startX = e.touches[0].clientX);
+  track.addEventListener('touchend', e => {
+    const diff = e.changedTouches[0].clientX - startX;
+    if(diff > 55 && index > 0) { index--; update(); }
+    if(diff < -55 && index < maxIndex) { index++; update(); }
+  });
+
+  function handleResize() {
+    visibleSlides = getVisibleSlides();
+    maxIndex = Math.max(0, images.length - visibleSlides);
+    if(index > maxIndex) index = maxIndex;
+    renderDots();
+    update();
   }
-  function stopAuto() { clearInterval(autoPlay); }
+  window.addEventListener('resize', handleResize);
 
-  // Flechas
-  nextBtn.onclick = next;
-  prevBtn.onclick = prev;
-
-  // Swipe/drag móvil/desktop
-  let startX, dragging = false;
-  track.addEventListener('pointerdown', e => {
-    startX = e.clientX || e.touches?.[0].clientX;
-    dragging = true;
-    stopAuto();
-    track.style.transition = "none";
-  });
-  document.addEventListener('pointermove', e => {
-    if (!dragging) return;
-    let x = e.clientX || e.touches?.[0].clientX;
-    let move = x - startX;
-    track.style.transform = `translateX(-${idx * (imgs[0].offsetWidth + parseInt(getComputedStyle(track).gap)||0) - move}px)`;
-  });
-  document.addEventListener('pointerup', e => {
-    if (!dragging) return;
-    let x = e.clientX || e.changedTouches?.[0].clientX;
-    let move = x - startX;
-    dragging = false;
-    if (Math.abs(move) > 80) { move < 0 ? next() : prev(); }
-    else goTo(idx);
-    startAuto();
-  });
-
-  // Responsivo
-  window.addEventListener('resize', () => goTo(idx, false));
-
-  // Inicializa
-  goTo(0, false);
-  updateDots();
-  startAuto();
-
-  // Pausa autoplay al pasar mouse/touch
-  track.addEventListener('mouseenter', stopAuto);
-  track.addEventListener('mouseleave', startAuto);
-  track.addEventListener('touchstart', stopAuto);
-  track.addEventListener('touchend', startAuto);
-
+  renderDots();
+  update();
 });
 </script>
-
+<!-- ===================== FIN ===================== -->
 </body>
 </html>
 
