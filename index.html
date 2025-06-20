@@ -257,89 +257,66 @@
     .stat{flex:1 1 260px;text-align:center;}
     .stat span{display:block;font-size:2.1rem;font-weight:700;color:var(--accent);margin-bottom:.3rem;}
 
-    /* ========== GALERÍA CARRUSEL PRO (FADE, DOTS, AUTOPLAY) ========== */
-    .carousel-container-pro {
-      position: relative;
-      max-width: 370px;
-      margin: 1.5rem auto 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .carousel-fade {
-      width: 320px;
-      height: 240px;
-      position: relative;
-      overflow: hidden;
-      border-radius: var(--radius);
-      box-shadow: 0 4px 16px rgba(0,0,0,.08);
-      background: #fafcff;
-    }
-    .carousel-fade img {
-      position: absolute;
-      left: 0; top: 0;
-      width: 320px; height: 240px;
-      opacity: 0;
-      transition: opacity 0.7s cubic-bezier(.6,.1,.6,1);
-      pointer-events: none;
-      border-radius: var(--radius);
-      object-fit: cover;
-      z-index: 0;
-    }
-    .carousel-fade img.active {
-      opacity: 1;
-      pointer-events: auto;
-      z-index: 1;
-    }
+/* === Carrusel 3-fotos (modifica solo la galería) === */
+.carousel3-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin: 0 auto;
+  max-width: 650px;
+}
+.carousel3-btn {
+  background: #19355c;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 44px; height: 44px;
+  font-size: 2rem;
+  box-shadow: 0 4px 16px rgba(1,19,43,0.12);
+  cursor: pointer;
+  transition: background .15s, transform .15s;
+  z-index: 2;
+}
+.carousel3-btn:hover { background: #003366; transform: scale(1.11);}
+.carousel3-track-wrapper {
+  overflow: hidden;
+  width: 420px; /* 3 fotos de 140px aprox (ajusta según imagenes) */
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 2px 14px rgba(1,19,43,0.10);
+}
+.carousel3-track {
+  display: flex;
+  transition: transform .5s cubic-bezier(.7,.2,.4,1.1);
+  will-change: transform;
+}
+.carousel3-track img {
+  min-width: 140px; max-width: 140px; height: 180px; /* Ajusta alto según foto */
+  margin: 0 12px;
+  border-radius: 18px;
+  box-shadow: 0 1px 8px rgba(1,19,43,0.08);
+  object-fit: cover;
+  background: #f5f7fa;
+  transition: box-shadow .23s;
+}
+.carousel3-track img.active {
+  box-shadow: 0 8px 32px rgba(34,87,122,0.17);
+  transform: scale(1.06);
+}
+.carousel3-dots {
+  display: flex; justify-content: center; margin-top: 1.1rem; gap: 7px;
+}
+.carousel3-dots button {
+  width: 11px; height: 11px; border-radius: 50%; border: none; background: #d7e5f8; cursor: pointer; transition:.16s;
+}
+.carousel3-dots button.active { background: #003366; }
 
-    .carousel-btn-pro {
-      background: var(--mid);
-      color: #fff;
-      border: none;
-      border-radius: 50%;
-      width: 38px;
-      height: 38px;
-      font-size: 1.8rem;
-      cursor: pointer;
-      transition: background 0.16s;
-      box-shadow: 0 2px 6px rgba(1,19,43,.13);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 2;
-      opacity: 0.92;
-    }
-    .carousel-btn-pro.prev { left: -19px; }
-    .carousel-btn-pro.next { right: -19px; }
-    .carousel-btn-pro:hover { background: var(--accent); }
-
-    .carousel-dots {
-      display: flex;
-      gap: 7px;
-      justify-content: center;
-      margin-top: 18px;
-    }
-    .carousel-dot {
-      width: 10px; height: 10px;
-      border-radius: 50%;
-      background: #c6dae5;
-      cursor: pointer;
-      border: none;
-      outline: none;
-      transition: background .18s, transform .2s;
-    }
-    .carousel-dot.active {
-      background: var(--mid);
-      transform: scale(1.23);
-    }
-    @media (max-width: 500px) {
-      .carousel-fade,
-      .carousel-fade img { width: 94vw; height: 140px; }
-      .carousel-container-pro { max-width: 98vw; }
-    }
+/* Responsive */
+@media (max-width: 570px) {
+  .carousel3-track-wrapper { width: 94vw; }
+  .carousel3-track img { min-width: 80vw; max-width: 80vw; height: 150px; }
+}
 
     /* ========== FAQ (PREGUNTAS FRECUENTES) ========== */
     details{border:1px solid #e2e2e2;background:#fcfcfc;padding:1.18rem;border-radius:var(--radius);
@@ -489,25 +466,28 @@
     </div>
   </section>
 
-  <!-- ========== GALERÍA EN CARRUSEL PRO (FADE, DOTS, AUTOPLAY) ========== -->
-  <section id="galeria" class="gallery">
-    <h2>Momentos ClearDrive</h2>
-    <div class="carousel-container-pro">
-      <div class="carousel-fade">
-        <!-- === AGREGAR O QUITAR FOTOS AQUÍ === -->
-        <img src="https://res.cloudinary.com/dm24jrq8d/image/upload/v1750383936/assets_cliente-3_i2kqcc.jpg?v=2" alt="Cliente satisfecho 1">
-        <img src="https://res.cloudinary.com/dm24jrq8d/image/upload/v1750384047/assets_cliente-2_f1w5wp.jpg?v=2" alt="Cliente satisfecho 2">
-        <img src="https://res.cloudinary.com/dm24jrq8d/image/upload/v1750384083/assets_cliente-1_jkx4qv.jpg?v=2" alt="Cliente satisfecho 3">
-        <img src="https://res.cloudinary.com/dm24jrq8d/image/upload/v1750446198/IMG_5403_xuwwhn.jpg" alt="Cliente satisfecho 4">
-        <img src="https://res.cloudinary.com/dm24jrq8d/image/upload/v1750446198/IMG_3372_idadil.jpg" alt="Cliente satisfecho 5">
-        <img src="https://res.cloudinary.com/dm24jrq8d/image/upload/v1750446217/7797480B-F517-42D4-AF5A-877B031D6E5D_fa6zkg.jpg" alt="Cliente satisfecho 6">
-        <img src="https://res.cloudinary.com/dm24jrq8d/image/upload/v1750446253/IMG_4565_qf56vh.jpg" alt="Cliente satisfecho 7">
+<!-- ========== GALERÍA CARRUSEL 3-FOTOS (SLIDER) ========== -->
+<section id="galeria" class="gallery">
+  <h2>Momentos ClearDrive</h2>
+  <div class="carousel3-container">
+    <button class="carousel3-btn prev" aria-label="Anterior">&#10094;</button>
+    <div class="carousel3-track-wrapper">
+      <div class="carousel3-track">
+        <!-- Puedes agregar/quitar imágenes aquí -->
+        <img src="https://res.cloudinary.com/dm24jrq8d/image/upload/v1750383936/assets_cliente-3_i2kqcc.jpg?v=2" alt="Cliente 1">
+        <img src="https://res.cloudinary.com/dm24jrq8d/image/upload/v1750384047/assets_cliente-2_f1w5wp.jpg?v=2" alt="Cliente 2">
+        <img src="https://res.cloudinary.com/dm24jrq8d/image/upload/v1750384083/assets_cliente-1_jkx4qv.jpg?v=2" alt="Cliente 3">
+        <img src="https://res.cloudinary.com/dm24jrq8d/image/upload/v1750446198/IMG_5403_xuwwhn.jpg" alt="Cliente 4">
+        <img src="https://res.cloudinary.com/dm24jrq8d/image/upload/v1750446198/IMG_3372_idadil.jpg" alt="Cliente 5">
+        <img src="https://res.cloudinary.com/dm24jrq8d/image/upload/v1750446217/7797480B-F517-42D4-AF5A-877B031D6E5D_fa6zkg.jpg" alt="Cliente 6">
+        <img src="https://res.cloudinary.com/dm24jrq8d/image/upload/v1750446253/IMG_4565_qf56vh.jpg" alt="Cliente 7">
       </div>
-      <button class="carousel-btn-pro prev" aria-label="Anterior">&#10094;</button>
-      <button class="carousel-btn-pro next" aria-label="Siguiente">&#10095;</button>
-      <div class="carousel-dots"></div>
     </div>
-  </section>
+    <button class="carousel3-btn next" aria-label="Siguiente">&#10095;</button>
+  </div>
+  <div class="carousel3-dots"></div>
+</section>
+
 
   <!-- ========== FAQ (PREGUNTAS FRECUENTES) ========== -->
   <section id="faq">
@@ -595,65 +575,61 @@
 
 <!-- ========== SCRIPT: GALERÍA CARRUSEL PRO (FADE, DOTS, AUTOPLAY, PAUSA) ========== -->
 <script>
-/*
-  Carrusel Pro:
-  - Fade suave entre imágenes
-  - Dots de navegación (clic)
-  - Autoplay con pausa si usuario interactúa
-  - 100% responsivo
-  - AGREGAR O QUITAR IMÁGENES SOLO EDITANDO LOS <img> EN .carousel-fade
-*/
+// ========== CARRUSEL DE 3 FOTOS (DESLIZANTE) ==========
 document.addEventListener('DOMContentLoaded', function(){
-  const fadeContainer = document.querySelector('.carousel-fade');
-  const images = Array.from(fadeContainer.querySelectorAll('img'));
-  const btnPrev = document.querySelector('.carousel-btn-pro.prev');
-  const btnNext = document.querySelector('.carousel-btn-pro.next');
-  const dotsContainer = document.querySelector('.carousel-dots');
-  let index = 0, autoplay = true, timer;
+  const track = document.querySelector('.carousel3-track');
+  const images = Array.from(track.children);
+  const btnPrev = document.querySelector('.carousel3-btn.prev');
+  const btnNext = document.querySelector('.carousel3-btn.next');
+  const dotsContainer = document.querySelector('.carousel3-dots');
+  const visibleCount = 3;
+  let index = 0;
 
-  // ---- CREAR DOTS SEGÚN LA CANTIDAD DE FOTOS ----
-  images.forEach((_, i) => {
-    const dot = document.createElement('button');
-    dot.className = 'carousel-dot' + (i===0 ? ' active' : '');
-    dot.setAttribute('aria-label', 'Ver foto '+(i+1));
-    dot.onclick = () => { index = i; showSlide(); pauseAuto(); };
-    dotsContainer.appendChild(dot);
-  });
+  // ========== CREAR DOTS ==========
+  let dotCount = images.length - visibleCount + 1;
+  if(dotCount < 1) dotCount = 1; // mínimo 1 dot
+  for(let i=0; i<dotCount; i++){
+    let btn = document.createElement('button');
+    btn.onclick = () => { index = i; update(); };
+    dotsContainer.appendChild(btn);
+  }
   const dots = Array.from(dotsContainer.children);
 
-  // ---- FUNCIONES PARA MOSTRAR SLIDE Y ACTUALIZAR DOTS ----
-  function showSlide() {
-    images.forEach((img, i) => img.classList.toggle('active', i===index));
-    dots.forEach((dot, i) => dot.classList.toggle('active', i===index));
+  // ========== SLIDE PRINCIPAL ==========
+  function update(){
+    // Limita el índice al rango permitido
+    if(index < 0) index = 0;
+    if(index > images.length-visibleCount) index = images.length-visibleCount;
+    // Mueve el carril
+    const imgW = images[0].offsetWidth + 24; // incluye margen
+    track.style.transform = `translateX(${-index * imgW}px)`;
+    // Dots activos
+    dots.forEach((d,i)=>d.classList.toggle('active',i===index));
+    // Imagen central "activa" (estilo)
+    images.forEach((img,i)=>{
+      img.classList.toggle('active', i===index+1); // la del medio
+    });
   }
-  function nextSlide() { index = (index + 1) % images.length; showSlide(); }
-  function prevSlide() { index = (index - 1 + images.length) % images.length; showSlide(); }
-
-  btnNext.onclick = () => { nextSlide(); pauseAuto(); };
-  btnPrev.onclick = () => { prevSlide(); pauseAuto(); };
-
-  // ---- AUTOPLAY AUTOMÁTICO ----
-  function autoPlay() {
-    if (!autoplay) return;
-    nextSlide();
-    timer = setTimeout(autoPlay, 3500);
+  btnPrev.onclick = ()=>{ index--; update(); };
+  btnNext.onclick = ()=>{ index++; update(); };
+  // Autoplay opcional
+  let timer=null, autoplay=true;
+  function autoPlay(){
+    if(!autoplay) return;
+    index = (index+1)%dotCount;
+    update();
+    timer = setTimeout(autoPlay, 3700);
   }
-  // ---- PAUSAR AUTOPLAY SI USUARIO INTERACTÚA ----
-  function pauseAuto() {
-    autoplay = false;
-    clearTimeout(timer);
-    setTimeout(() => { autoplay = true; autoPlay(); }, 12000); // Reactiva autoplay después de 12 segundos
+  function pause(){
+    autoplay=false; clearTimeout(timer);
+    setTimeout(()=>{autoplay=true;autoPlay();},9000);
   }
-  // ---- PAUSAR TAMBIÉN EN TOUCH O HOVER (MOBILE/PC) ----
-  fadeContainer.addEventListener('mouseenter', pauseAuto);
-  fadeContainer.addEventListener('touchstart', pauseAuto);
-
-  // ---- MOSTRAR PRIMERA IMAGEN ----
-  showSlide();
-  autoPlay();
-
-  // ---- AJUSTAR AL REDIMENSIONAR PANTALLA ----
-  window.addEventListener('resize', showSlide);
+  btnPrev.onmousedown = btnNext.onmousedown = pause;
+  dotsContainer.onmousedown = pause;
+  track.onmouseenter = pause;
+  // Inicializa
+  update(); autoPlay();
+  window.addEventListener('resize', update);
 });
 </script>
 
