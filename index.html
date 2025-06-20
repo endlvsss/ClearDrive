@@ -95,15 +95,15 @@
       box-shadow: 0 10px 36px rgba(37,211,102,.25);
     }
 
-    /* --- AJUSTE HERO STATS - ALINEAR Y SUBIR TERCERA MÉTRICA --- */
+    /* --- AJUSTE HERO STATS - ALINEADO Y SEPARADO --- */
     .hero-stats {
       margin-top: 1.6rem;
       margin-bottom: 2.7rem;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 2.1rem;
-      align-items: flex-end; /* Alínea los textos abajo */
+      gap: 2.6rem;   /* Aquí puedes ajustar la separación horizontal */
+      align-items: flex-end;
     }
     .hero-stats .stat {
       text-align: center;
@@ -123,11 +123,6 @@
       line-height: 1.12;
       margin-top: 0;
       display: block;
-    }
-    .hero-stats .stat:last-child {
-      /* Este bloque mueve la tercera métrica más arriba */
-      align-self: flex-start;
-      margin-top: 0; /* Ajusta este valor para subirlo más o menos */
     }
 
     @media(max-width:640px){
@@ -451,4 +446,5 @@
 
 </body>
 </html>
+
 
