@@ -94,22 +94,47 @@
       background: #1db45a;
       box-shadow: 0 10px 36px rgba(37,211,102,.25);
     }
-    .hero-stats{
+
+    /* --- AJUSTE HERO STATS - ALINEAR Y SUBIR TERCERA MÉTRICA --- */
+    .hero-stats {
       margin-top: 1.6rem;
-      margin-bottom: 2.7rem; /* ¡AIRE ABAJO! */
-      display:flex;
-      flex-wrap:wrap;
-      justify-content:center;
-      gap:2.1rem;
+      margin-bottom: 2.7rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2.1rem;
+      align-items: flex-end; /* Alínea los textos abajo */
     }
-    .hero-stats .stat{font-size:1rem;color:#fff;}
-    .hero-stats span{display:block;font-size:2rem;font-weight:700;color:var(--accent);margin-bottom:.2rem;}
-    .hero-stats small{font-size:.97rem;}
+    .hero-stats .stat {
+      text-align: center;
+      min-width: 110px;
+    }
+    .hero-stats .stat span {
+      display: block;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: .2rem;
+    }
+    .hero-stats .stat small {
+      font-size: 1rem;
+      color: #fff;
+      opacity: .97;
+      line-height: 1.12;
+      margin-top: 0;
+      display: block;
+    }
+    .hero-stats .stat:last-child {
+      /* Este bloque mueve la tercera métrica más arriba */
+      align-self: flex-start;
+      margin-top: 24px; /* Ajusta este valor para subirlo más o menos */
+    }
 
     @media(max-width:640px){
       .hero-clean{min-height:unset;padding:8rem 0 4rem;}
       .hero-clean h1{font-size:2.1rem;}
       .hero-logo{width:70px;}
+      .hero-stats {gap: 1.2rem;}
     }
 
     /* Secciones generales */
@@ -303,9 +328,9 @@
     <a class="cta-btn" href="https://wa.me/message/XJ3YP4DDOHB6A1" target="_blank">Solicitar Cotización</a>
 
     <div class="hero-stats">
-      <div class="stat"><span>+750</span><small>rutas completadas</small></div>
+      <div class="stat"><span>+560</span><small>Clientes</small></div>
       <div class="stat"><span>+50</span><small>centros de eventos</small></div>
-      <div class="stat"><span>+740</span><small>clientes felices</small></div>
+      <div class="stat"><span>+750</span><small>Rutas Completadas</small></div>
     </div>
   </div>
 </header>
@@ -426,5 +451,4 @@
 
 </body>
 </html>
-
 
