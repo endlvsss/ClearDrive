@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ClearDrive | Conductores de Reemplazo </title>
+  <title>ClearDrive | Conducción de Reemplazo Segura</title>
 
   <!-- Favicon -->
   <link rel="icon" href="https://res.cloudinary.com/dm24jrq8d/image/upload/v1750084801/6_jxcgwr.png?v=2" type="image/png">
@@ -71,7 +71,11 @@
       background:linear-gradient(180deg,rgba(1,19,43,.90),rgba(1,19,43,.48)),
       url('https://res.cloudinary.com/dm24jrq8d/image/upload/v1750384375/assets_cliente-4_k3txxh.jpg?v=2') center/cover no-repeat;
     }
-    .hero-inner{padding:0 1.6rem 1.8rem 1.6rem;max-width:720px;margin:auto;}
+    .hero-inner {
+      padding: 0 0.2rem 1.8rem 0.2rem;  /* Menos padding horizontal */
+      max-width: 900px; /* Más ancho */
+      margin: auto;
+    }
     .hero-logo{width:94px;margin:0 auto 1.1rem;}
     .hero-clean h1{font-size:2.9rem;line-height:1.13;margin-bottom:1.1rem;font-weight:700;
       color:#fff;text-shadow:0 2px 18px rgba(1,19,43,0.35);}
@@ -95,19 +99,20 @@
       box-shadow: 0 10px 36px rgba(37,211,102,.25);
     }
 
-    /* --- AJUSTE HERO STATS --- */
+    /* --- AJUSTE HERO STATS - ALINEAR LAS 3 MÉTRICAS --- */
     .hero-stats {
       margin-top: 1.6rem;
       margin-bottom: 2.7rem;
       display: flex;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;         /* Fuerza una sola línea */
       justify-content: center;
-      align-items: flex-start; /* <-- TODAS ALINEADAS ARRIBA */
-      gap: 2.7rem; /* Más separación entre métricas */
+      gap: 2.7rem;              /* Ajusta separación entre métricas */
+      align-items: flex-end;
     }
     .hero-stats .stat {
       text-align: center;
-      min-width: 140px;
+      min-width: 120px;
+      white-space: nowrap;
     }
     .hero-stats .stat span {
       display: block;
@@ -123,13 +128,16 @@
       line-height: 1.12;
       margin-top: 0;
       display: block;
+      white-space: nowrap;
     }
 
     @media(max-width:640px){
       .hero-clean{min-height:unset;padding:8rem 0 4rem;}
       .hero-clean h1{font-size:2.1rem;}
       .hero-logo{width:70px;}
-      .hero-stats {gap: 1.4rem;}
+      .hero-stats {gap: 1.2rem;}
+      .hero-inner{max-width:100%;}
+      .hero-stats {flex-wrap: wrap;}
     }
 
     /* Secciones generales */
@@ -446,3 +454,4 @@
 
 </body>
 </html>
+
