@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.cleardrive\.cl$ [NC]
+RewriteRule ^(.*)$ https://cleardrive.cl/$1 [L,R=301]
