@@ -1,3 +1,9 @@
 RewriteEngine On
+
+# Redirecciona www a sin-www
 RewriteCond %{HTTP_HOST} ^www\.cleardrive\.cl$ [NC]
+RewriteRule ^(.*)$ https://cleardrive.cl/$1 [L,R=301]
+
+# Fuerza HTTPS para todo
+RewriteCond %{HTTPS} !=on
 RewriteRule ^(.*)$ https://cleardrive.cl/$1 [L,R=301]
