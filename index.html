@@ -16,7 +16,6 @@
   <link rel="canonical" href="https://cleardrive.cl/" />
   <meta name="robots" content="index, follow">
 
-  <!-- ============== ESTILOS GENERALES (puedes llevar a tu CSS global si quieres) ============== -->
   <style>
     :root{
       --dark:#01132B;
@@ -38,14 +37,47 @@
       background:var(--cta);color:#fff;font-size:28px;display:flex;align-items:center;justify-content:center;
       box-shadow:0 4px 12px rgba(0,0,0,.25);z-index:160;}
 
-    /* NAV */
-    nav{position:fixed;top:0;width:100%;background:rgba(255,255,255,.93);
-      backdrop-filter:blur(8px);z-index:120;box-shadow:0 2px 8px rgba(0,0,0,.07);}
-    .nav-wrapper{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:.6rem 1rem;}
-    .nav-logo{display:flex;align-items:center;gap:.7rem;}
-    .nav-logo img{width:44px;}
-    .nav-logo span{font-weight:700;font-size:1.27rem;color:var(--mid);}
-    #nav-toggle {display:none;background: none; border: none; font-size:2.2rem; cursor:pointer; color:var(--mid);}
+    /* ===== NAVBAR con logo alineado y menú móvil correcto ===== */
+    nav{
+      position:fixed;top:0;width:100%;background:rgba(255,255,255,.93);
+      backdrop-filter:blur(8px);z-index:120;box-shadow:0 2px 8px rgba(0,0,0,.07);
+    }
+    .nav-wrapper{
+      max-width:1100px;
+      margin:auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:.6rem 1rem;
+    }
+    .nav-logo{
+      display:flex;
+      align-items: center;   /* << Centrado vertical logo + texto */
+      gap:.7rem;
+      height:54px;           /* Ajusta si quieres más alto */
+    }
+    .nav-logo img{
+      width:44px;
+      height:44px;
+      object-fit:cover;
+      border-radius:50%;
+      margin-top:0;         /* Cambia a 2px si quieres afinar */
+      transition: width .22s, margin-top .22s;
+    }
+    .nav-logo span{
+      font-weight:700;
+      font-size:1.27rem;
+      color:var(--mid);
+      display:flex;
+      align-items:center;
+      height:44px;
+      line-height:1;
+    }
+    #nav-toggle {
+      display:none;
+      background: none; border: none; font-size:2.2rem; cursor:pointer; color:var(--mid);
+      margin-left:auto;
+    }
     #nav-menu{display:flex;gap:1.5rem;list-style:none;}
     #nav-menu a{color:var(--dark);font-weight:600;padding:.25rem .7rem;border-radius:6px;transition:.17s;}
     #nav-menu a:hover{background:var(--accent);color:#fff;}
@@ -53,7 +85,18 @@
       .nav-wrapper{flex-direction:column;align-items:stretch;}
     }
     @media(max-width:720px){
-      #nav-toggle{display:block;}
+      .nav-wrapper{
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .nav-logo img{
+        width:38px;
+        height:38px;
+      }
+      #nav-toggle{
+        display:block;
+      }
       #nav-menu{
         flex-direction:column;
         background:rgba(255,255,255,.99);
@@ -494,7 +537,7 @@
     </div>
   </section>
 
-  <!-- ===================== GALERÍA: MOMENTOS CLEARDIVE (CARRUSEL) ===================== -->
+  <!-- ===================== GALERÍA: MOMENTOS CLEARDRIVE (CARRUSEL) ===================== -->
   <section id="galeria" class="gallery">
     <h2>Momentos ClearDrive</h2>
     <div class="carousel-container">
@@ -503,7 +546,7 @@
       <!-- Carrusel: exactamente 3 imágenes a la vez -->
       <div class="carousel-viewport">
         <div class="carousel-track">
-          <!-- Aquí agregas/elimina imágenes -->
+          <!-- Agrega/quita imágenes aquí -->
           <img src="https://res.cloudinary.com/dm24jrq8d/image/upload/v1750383936/assets_cliente-3_i2kqcc.jpg?v=2" alt="Cliente satisfecho 1">
           <img src="https://res.cloudinary.com/dm24jrq8d/image/upload/v1750451384/IMG_3428_fcna4z.jpg" alt="Cliente satisfecho 2">
           <img src="https://res.cloudinary.com/dm24jrq8d/image/upload/v1750384047/assets_cliente-2_f1w5wp.jpg?v=2" alt="Cliente satisfecho 3">
@@ -516,7 +559,6 @@
           <img src="https://res.cloudinary.com/dm24jrq8d/image/upload/v1750449826/489c268f-fd32-41f2-b68e-85499e8c8b22_end3ry.jpg" alt="Cliente 10">
           <img src="https://res.cloudinary.com/dm24jrq8d/image/upload/v1750449826/c0d2e791-b778-4763-b864-0f91eab581d2_selglj.jpg" alt="Cliente 11">
           <img src="https://res.cloudinary.com/dm24jrq8d/image/upload/v1750451383/IMG_3215_p3p0dr.jpg" alt="Cliente 12">
-          <img src="https://res.cloudinary.com/dm24jrq8d/image/upload/v1750451384/IMG_3628_decsth.jpg" alt="Cliente 13">
         </div>
       </div>
       <!-- Flecha derecha -->
@@ -589,7 +631,7 @@
     document.querySelectorAll('.hero-stats .stat span[data-target]').forEach(span => {
       const target = +span.getAttribute('data-target');
       let count = 0;
-      const duration = 3200; // ms total de la animación
+      const duration = 5200; // ms total de la animación
       const steps = 45;
       const increment = target / steps;
       let step = 0;
@@ -683,5 +725,6 @@ document.addEventListener('DOMContentLoaded', () => {
 <!-- ===================== FIN ===================== -->
 </body>
 </html>
+
 
 
